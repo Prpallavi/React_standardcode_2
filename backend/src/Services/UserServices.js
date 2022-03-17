@@ -32,6 +32,21 @@ catch (err){
 	res.status(500);
 }
 },
+
+
+getCountry: async (req,res,model) => {
+    console.log("model",model)
+/* 	const view = await model.find().populate('country_id') */
+const view=await model.find({country_id:req.params.id})
+	try{
+		console.log(view)
+		res.send(view)
+}
+catch (err){
+	res.status(500);
+}
+},
+
 updateUser: async (req, res,model) =>  {
     console.log("model",model)
 	const updates = await model.findByIdAndUpdate({_id: req.params.id },req.body)
