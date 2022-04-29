@@ -2,6 +2,7 @@ require("dotenv").config({path:__dirname+'/.env'});
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const Profile=require("./src/Model/ProfileModel")
 const port = 4000;
 const app = express();
 
@@ -34,3 +35,5 @@ app.listen(PORT, (err) => {
     }
     console.log("server running on port" + PORT);
 });
+
+
